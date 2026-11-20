@@ -12,7 +12,7 @@ Easily select images from the WordPress Media Library and display them in an int
 
 ### Interactive Slider Demonstration
 
-![Before and After Slider Demo](assets/gifs/videodemo.gif)
+![Before and After Slider Demo](assets/images/videodemo.gif)
 
 ### Gutenberg Editor
 

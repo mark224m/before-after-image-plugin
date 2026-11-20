@@ -1,0 +1,149 @@
+
+/* ========================================
+   Before / After Container
+======================================== */
+
+#beforeafter .inner {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-top: 0;
+}
+
+.beforeafterbox {
+    position: relative;
+    display: flex;
+    max-width: unset !important;
+    height: fit-content;
+    margin: 15px 0 !important;
+    overflow: hidden;
+}
+
+/* ========================================
+   Image Layers
+======================================== */
+
+.beforeafterbox figure {
+    position: relative;
+    z-index: 5;
+    width: 300px;
+    overflow: unset;
+    background-size: cover;
+}
+
+.beforeafterbox .imagewrapper {
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.beforeafterbox .imagewrapper img {
+    max-width: unset;
+}
+
+.beforeafterbox .after {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: filter 0.3s;
+}
+
+/* ========================================
+   Active State
+======================================== */
+
+.beforeafterbox.active .after,
+.beforeafterbox.active .imagewrapper img {
+    filter: brightness(0.5);
+}
+
+.beforeafterbox .beforeafter {
+    position: absolute;
+    z-index: 10;
+    bottom: -45px;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 94%;
+    transform: translateX(-50%);
+    transition: bottom 0.3s;
+}
+
+.beforeafterbox.active .beforeafter {
+    bottom: 25px;
+}
+
+.beforeafterbox .beforeafter > div {
+    padding: 8px 15px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* ========================================
+   Draggable Slider Handle
+======================================== */
+
+.beforeafterbox .ui-resizable-e {
+    width: 12px;
+    background: #fff;
+}
+
+.beforeafterbox .ui-resizable-e::before {
+    position: absolute;
+    top: 50%;
+    left: -32px;
+    height: 14px;
+    color: #fff;
+    font-family: "dashicons";
+    font-size: 30px;
+    content: "\f141";
+}
+
+.beforeafterbox .frontArrow {
+    position: relative;
+    z-index: 100;
+    left: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 0%;
+}
+
+.beforeafterbox .frontArrow::after {
+    position: relative;
+    color: #fff;
+    font-family: "dashicons";
+    font-size: 30px;
+    cursor: e-resize;
+    content: "\f139";
+}
+
+.beforeafterbox .frontArrow::before {
+    position: absolute;
+    top: 50%;
+    right: -31px;
+    width: 60px;
+    height: 60px;
+    border: 5px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    cursor: e-resize;
+    transform: translateY(-50%);
+    content: "";
+}
+
+/* ========================================
+   jQuery UI Overrides
+======================================== */
+
+.beforeafterbox .ui-icon-gripsmall-diagonal-se,
+.beforeafterbox .ui-resizable-s {
+    display: none !important;
+}

@@ -1,0 +1,21 @@
+{
+    "apiVersion": 3,
+    "name": "beforeafter-manager/comparison",
+    "title": "Before/After Comparison",
+    "category": "beforeafter-manager",
+    "icon": "images-alt2",
+    "description": "Display a before and after image comparison.",
+    "attributes": {
+        "beforeImageId": {
+            "type": "number"
+        },
+        "afterImageId": {
+            "type": "number"
+        }
+    },
+    "editorScript": "ba-comparison-editor",
+    "editorStyle": "ba-comparison-style",
+    "style": "ba-comparison-style",
+    "viewScript": "ba-comparison-view",
+    "render": "file:./render.php"
+}
